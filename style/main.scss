@@ -1,0 +1,22 @@
+@import 'reset';
+@import './animation/index';
+body {
+    background-color: red;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+@import 'transition/index';
+@import 'canvas/index';
+@import 'tooltips/tooltips';
+@import 'tooltips/tooltipColors';
+@import 'wrapper/index';
+@import 'header/index';
+@import 'body/index';
+@import 'footer/index';
+@import 'skillsList/index';
+@import 'projectBox/index';

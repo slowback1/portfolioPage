@@ -1,0 +1,50 @@
+.projectBox {
+    border: 1px solid #333;
+    width: 80%;
+    margin: 10px auto;
+    h3 {
+        font-size: 2rem;
+        font-weight: 1000;
+        margin-top: 4px;
+        margin-left: 4px;
+        text-align: center;
+    }
+    a {
+        margin-left: 10px;
+        display: inline-block;
+        margin-top: 4px;
+        font-size: 1.2rem;
+        font-weight: 150;
+        border-bottom: 1px dotted white;
+        text-align: center;
+    }
+    p {
+        margin-top: 8px;
+        margin-left: 12px;
+        text-align: left;
+        inset-block: unset;
+        font-size: 1.1rem;
+    }
+    
+    .tooltipsList {
+        margin-left: 25px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        h4 {
+            font-size: 1.4rem;  
+            display: inline-block;     
+        }
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .projectBox{
+        width: 100%;
+        margin: 10px 0;
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+}
