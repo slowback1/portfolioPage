@@ -28,7 +28,7 @@
             return $sql;
         }
         private function getProjects($queryType) {
-            include 'C:\Users\Drew\Desktop\XAMPP\htdocs\mvcpractice\andrewwobeck\config\dbinfo.php';
+            include '../config/dbinfo.php';
 
             
             $conn = new mysqli($hostname, $username, $password, $dbname);

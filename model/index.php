@@ -28,7 +28,7 @@
             arsort($this->otherSkills);
         }
         private function readSkills() {
-            include 'C:\Users\Drew\Desktop\XAMPP\htdocs\mvcpractice\andrewwobeck\config\dbinfo.php';
+            include '../config/dbinfo.php';
             //skills I currently have, plus skills I might learn in the future.  Not a conclusive list.  0 is backend, 1 is frontend, 2 is other.
             $skillsArr = array(
                 "php" => 0,

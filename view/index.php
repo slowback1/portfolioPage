@@ -3,12 +3,12 @@
         public function __construct($model, $controller) {
             $this->model = $model;
             $this->controller = $controller;
-            include_once 'C:\Users\Drew\Desktop\XAMPP\htdocs\mvcpractice\andrewwobeck\view\home\index.php';
-            include_once 'C:\Users\Drew\Desktop\XAMPP\htdocs\mvcpractice\andrewwobeck\view\projects\index.php';
+            include_once './home/index.php';
+            include_once './projects/index.php';
             $this->build();
         }
         private function build() {
-            include 'C:\Users\Drew\Desktop\XAMPP\htdocs\mvcpractice\andrewwobeck\view\projectBox.php';
+            include './projectBox.php';
             echo $this->model->metadata;
             echo "<canvas id='dotCan'>Your browser does not support canvas.</canvas>";
             echo "<div class='wrapper'>";
