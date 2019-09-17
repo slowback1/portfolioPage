@@ -17,9 +17,9 @@
             $skills = $project['skills'];
             echo "
             <div class='projectBox'>
-                <h3>$name - ". $this->formatDate($date) . "</h3>
+                <h3>$name - ". $this->formatDate($date) . "</h3><div class='pBoxLinks'>
                 ".$this->buildLink($github, "GitHub Link").$this->buildLink($link, "Project Link")."
-                <p>$description</p>
+                </div><p>$description</p>
                 <div class='tooltipsList'><h4>Skills:</h4>".$this->buildSkills($skills)."
             </div></div>
             ";
@@ -29,7 +29,24 @@
         private function buildSkills($skills) {
             $result = "";
             foreach($skills as $skill) {
-                $result = $result . "<div class='tooltip $skill'><span class='tooltiptext'>$skill</span></div>";
+                $skillName = trim($skill);
+                switch ($skillName) {
+                    case "javascript":
+                        $skillName = "js";
+                        break;
+                    case "express":
+                        $skillName = "exp";
+                        break;
+                    case "python":
+                        $skillName = "py";
+                        break;
+                    case "mysql":
+                        $skillName = "sql";
+                        break;
+                    default:
+                        break;
+                }
+                $result = $result . "<div class='tooltip $skill'><p class='skillText'>$skillName</p><span class='tooltiptext'>$skill</span></div>";
             }
             return $result;
         }

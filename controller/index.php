@@ -28,10 +28,10 @@
             return $sql;
         }
         private function getProjects($queryType) {
-            include '../config/dbinfo.php';
+            //include dirname(__FILE__) . '../config/dbinfo.php';
 
             
-            $conn = new mysqli($hostname, $username, $password, $dbname);
+            $conn = new mysqli("localhost", "root", "", "projects");
             if($conn->connect_error) {
                 die("connection failed: " . $conn->connect_error);
             }

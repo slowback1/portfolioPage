@@ -1,19 +1,9 @@
 @import 'reset';
 @import './animation/index';
-body {
-    background-color: red;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
+@import 'general/index';
 @import 'transition/index';
 @import 'canvas/index';
-@import 'tooltips/tooltips';
-@import 'tooltips/tooltipColors';
+@import 'tooltips/index';
 @import 'wrapper/index';
 @import 'header/index';
 @import 'body/index';

@@ -57,11 +57,11 @@ table {
     width: 0%;
   }
   100% {
-    width: 100%;
+    width: 100vw;
   }
 }
 body {
-  background-color: red;
+  background-color: #222222;
   color: #eee;
   display: flex;
   flex-direction: column;
@@ -95,6 +95,14 @@ a:hover {
   display: inline-block;
   height: 2rem;
   width: 2rem;
+}
+.tooltip .skillText {
+  cursor: default;
+  font-size: 0.75rem;
+  transform: rotate(45deg);
+  text-align: center;
+  margin: 10px 0 0 0;
+  padding: 0;
 }
 
 .tooltip .tooltiptext {
@@ -131,6 +139,7 @@ a:hover {
 
 .php {
   background-color: #8892bf;
+  color: #111;
 }
 
 .mysql {
@@ -143,6 +152,7 @@ a:hover {
 
 .javascript {
   background-color: #f7e017;
+  color: #111;
 }
 
 .node {
@@ -155,14 +165,16 @@ a:hover {
 
 .mvc {
   background-color: #afafaf;
+  color: #111;
 }
 
 .react {
   background-color: #61dbfb;
+  color: #111;
 }
 
 .git {
-  background-color: #ee4f32;
+  background-color: #ee5b41;
 }
 
 .scss {
@@ -175,6 +187,51 @@ a:hover {
 
 .python {
   background-color: #fbc331;
+  color: #111 !important;
+}
+
+.jquery {
+  background-color: greenyellow;
+}
+
+.asp\.net {
+  background-color: #ad0d0d;
+}
+
+.rubyonrails {
+  background-color: #e63232;
+}
+
+.bootstrap {
+  background-color: #2124c0;
+}
+
+.less {
+  background-color: #e0579c;
+}
+
+.typescript {
+  background-color: #23239e;
+}
+
+.jest {
+  background-color: #89db1e;
+}
+
+.jasmine {
+  background-color: #be2f2f;
+}
+
+.mobx {
+  background-color: cadetblue;
+}
+
+.photoshop {
+  background-color: #1f1f8f;
+}
+
+.es6 {
+  background-color: #bbb829;
 }
 
 .wrapper {
@@ -200,6 +257,8 @@ a:hover {
   .wrapper {
     width: 100%;
     margin: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 nav {
@@ -214,6 +273,8 @@ nav {
   position: sticky;
   top: 0;
   background-color: #111111;
+  min-height: 25px;
+  align-items: center;
 }
 
 .main h1 {
@@ -225,6 +286,12 @@ nav {
   margin-left: 15px;
   font-size: 28px;
   margin-top: 10px;
+}
+.main h3 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .main .subtitle {
   margin-left: 19px;
@@ -240,6 +307,11 @@ nav {
 @media screen and (max-width: 850px) {
   h1 {
     text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 0.75rem;
   }
 }
 .projectsHeader {
@@ -262,6 +334,12 @@ footer {
   padding: 10px 0 10px 0;
   align-items: center;
 }
+footer .copyright {
+  font-size: 0.75rem;
+  align-self: flex-end;
+  margin: 0;
+  padding: 0;
+}
 footer .links {
   display: inline-block;
 }
@@ -275,8 +353,15 @@ footer .links a {
   margin-left: 25px;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-bottom: 65px;
 }
 
+@media screen and (max-width: 600px) {
+  .skillsList {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
 .skillsList .skillBox {
   margin: 0;
   margin-left: 0;
@@ -286,28 +371,75 @@ footer .links a {
   flex-direction: row;
 }
 .skillsList .skillBox .skillHead {
-  background-color: #333333;
-  border: 1px solid #111111;
-  width: 10%;
+  width: 74px;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
   justify-content: center;
+  position: relative;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  transform: rotate(-45deg);
+  top: 35px;
+  left: 5px;
+  font-size: 12px;
+  height: 18px;
+  overflow: visible;
+  flex-shrink: 0;
 }
 .skillsList .skillBox .skillGraph {
-  margin-left: 5px;
-  height: 100%;
-  max-width: 60%;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid white;
+  padding-left: 5px;
+  height: 24px;
+  max-width: 80%;
+  flex-shrink: 1;
 }
 .skillsList .skillBox .skillGraph .graphBar {
+  overflow-x: hidden;
   height: 100%;
-  height: 18px;
-  animation: showGraph 1s forwards;
+  animation: showGraph ease-in-out 2.5s forwards;
+  opacity: 1;
+  transition: 0.5s;
+}
+.skillsList .skillBox .skillGraph .graphBar:hover {
+  opacity: 1;
+}
+
+#skillGraphHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 16px;
+  overflow: visible;
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+  border-radius: 0px;
+  margin-left: -8px;
+}
+#skillGraphHead p {
+  position: static;
+  padding-bottom: 10px;
+  z-index: -1;
+  border-right: 2px dotted white;
+}
+
+#skillBoxHead {
+  margin-bottom: 10px;
+}
+#skillBoxHead .skillHead {
+  background-color: transparent;
+  border: none;
 }
 
 .projectBox {
   border: 1px solid #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 80%;
   margin: 10px auto;
 }
@@ -317,6 +449,13 @@ footer .links a {
   margin-top: 4px;
   margin-left: 4px;
   text-align: center;
+}
+.projectBox .pBoxLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .projectBox a {
   margin-left: 10px;
@@ -353,6 +492,12 @@ footer .links a {
   }
   .projectBox h3 {
     font-size: 1.5rem;
+  }
+  .projectBox .tooltipsList {
+    margin-left: 0;
+  }
+  .projectBox h4 {
+    margin-left: 5px;
   }
 }
 

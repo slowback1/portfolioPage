@@ -3,12 +3,12 @@
         public function __construct($model, $controller) {
             $this->model = $model;
             $this->controller = $controller;
-            include_once './home/index.php';
-            include_once './projects/index.php';
+            include_once dirname(__FILE__).'/home/index.php';
+            include_once dirname(__FILE__).'/projects/index.php';
             $this->build();
         }
         private function build() {
-            include './projectBox.php';
+            include dirname(__FILE__) . '/projectBox.php';
             echo $this->model->metadata;
             echo "<canvas id='dotCan'>Your browser does not support canvas.</canvas>";
             echo "<div class='wrapper'>";

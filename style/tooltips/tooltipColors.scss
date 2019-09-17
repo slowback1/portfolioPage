@@ -1,5 +1,6 @@
 .php {
     background-color: #8892bf;
+    color: #111;
 }
 .mysql {
     background-color: #4479a1;
@@ -8,7 +9,8 @@
     background-color: #2270ba;
 }
 .javascript {
-    background-color: #f7e017
+    background-color: #f7e017;
+    color: #111;
 }
 .node {
     background-color: #89bd5c;
@@ -18,12 +20,14 @@
 }
 .mvc {
     background-color: #afafaf;
+    color: #111;
 }
 .react {
-    background-color: #61dbfb;
+    background-color: #61dbfb; 
+    color: #111;
 }
 .git {
-    background-color: #ee4f32;
+    background-color: #ee5b41;
 }
 .scss {
     background-color: #cc6699;
@@ -33,4 +37,38 @@
 }
 .python {
     background-color: #fbc331;
+    color: #111 !important;
+}
+.jquery {
+    background-color: greenyellow;
+}
+.asp\.net {
+    background-color: #ad0d0d;
+}
+.rubyonrails {
+    background-color: #e63232;
+}
+.bootstrap {
+    background-color: #2124c0;
+}
+.less {
+    background-color: #e0579c;
+}
+.typescript {
+    background-color: #23239e;
+}
+.jest {
+    background-color: #89db1e;
+}
+.jasmine {
+    background-color: rgb(190, 47, 47);
+}
+.mobx {
+    background-color: cadetblue;
+}
+.photoshop {
+    background-color: rgb(31, 31, 143);
+}
+.es6 {
+    background-color: rgb(187, 184, 41);
 }

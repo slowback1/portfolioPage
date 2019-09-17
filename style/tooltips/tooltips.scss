@@ -3,6 +3,14 @@
     display: inline-block;
     height: 2rem;
     width: 2rem;
+    .skillText {
+      cursor: default;
+      font-size: 0.75rem;
+      transform: rotate(45deg);
+      text-align: center;
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
   }
   
   .tooltip .tooltiptext {

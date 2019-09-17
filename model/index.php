@@ -8,14 +8,15 @@
         public $frontendSkills = array();
         public $backendSkills = array();
         public $otherSkills = array();
+        public $skills = array();
         public $pages = [
             "home" => 0,
             "projects" => 1
         ];
         public function __construct() {
-            include_once 'templates/header.php';
-            include_once 'templates/footer.php';
-            include_once 'templates/metadata.php';
+            include_once dirname(__FILE__) . '/templates/header.php';
+            include_once dirname(__FILE__) . '/templates/footer.php';
+            include_once dirname(__FILE__) . '/templates/metadata.php';
             $h = new Header();
             $f = new Footer();
             $m = new Metadata();
@@ -26,9 +27,10 @@
             arsort($this->frontendSkills);
             arsort($this->backendSkills);
             arsort($this->otherSkills);
+            arsort($this->skills);
         }
         private function readSkills() {
-            include '../config/dbinfo.php';
+            //include dirname(__FILE__) . '../config/dbinfo_prod.php';
             //skills I currently have, plus skills I might learn in the future.  Not a conclusive list.  0 is backend, 1 is frontend, 2 is other.
             $skillsArr = array(
                 "php" => 0,
@@ -79,7 +81,7 @@
                 "oracle" => 0,
                 "redis" => 0,
             );
-            $conn = new mysqli($hostname, $username, $password, $dbname);
+            $conn = new mysqli("localhost", "root", "", "projects");
             if($conn->connect_error) {
                 die("connection failed: " . $conn->connect_error);
             }
@@ -93,6 +95,14 @@
                         
                         
                         $skill = trim(strtolower($skill));
+                        if(array_key_exists($skill, $this->skills)) {
+                            $this->skills[$skill] += 1;
+                            if($this->skills[$skill] > $this->maxSkillCount) {
+                                $this->skills[$skill] = $this->maxSkillCount;
+                            }
+                        } else {
+                            $this->skills[$skill] = 1;
+                        }
                         switch($skillsArr[$skill]) {
                             case 0:
                                 if(array_key_exists($skill, $this->backendSkills)) {
