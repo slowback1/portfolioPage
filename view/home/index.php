@@ -13,7 +13,7 @@
         }
         private function build($skills) {
             $lineHeight = 22 + (sizeof($this->model->skills) * 24) . "px";
-            echo "<div class='main'><h1>Hello, I'm Andrew Wobeck</h1><p class='subtitle'>I am an aspiring Web Developer looking to start my career in the field. I currently live in Shawnee, Oklahoma, and am interested in positions in the Oklahoma City, Oklahoma area.</p>
+            echo "<div class='main'><h1>Hello, I'm Andrew Wobeck</h1><p class='subtitle'>I am a Software Quality Assurance Engineer at Intelek Technologies.</p>
 
             <h2>Skillset:</h2>
             <h3>How Many Projects I Have Built with Each Language, Framework, and Library</h3>
